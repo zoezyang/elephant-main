@@ -1,0 +1,463 @@
+{% extends "base.html" %}
+
+{% block topnav %}
+<div class='topnav'>
+    <a class='inactiveLink'>Navigate: </a>
+    <a href="#details" class='blue_nav'>Details</a>
+    <a href="#stroke" class='purple_nav'>Stroke</a>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<a class="anchor" id="details"></a>
+
+<div class="itembox fullwidth">
+    <div class="heading-item">Patient Details</div>
+    <table class="table-form">
+        <tbody>
+            <tr>
+                <td class="table-label-greyupper">UR number</td>
+                <td><input type="text", class="textbox", name="patientdetails", placeholder="UR number"></td>
+            </tr>
+            <tr>
+                <td class="table-label-greyupper">First Name</td>
+                <td><input type="text", class="textbox", name="patientdetails", value="Bron"></td>
+            </tr>
+            <tr>
+                <td class="table-label-greyupper">Last Name</td>
+                <td><input type="text", class="textbox" , name="patientdetails", value="Wyn"></td>
+            </tr>
+            <tr>
+                <td class="table-label-greyupper">DOB</td>
+                <td><input type="date", class="inputdate" name="patientdetails"></td>
+            </tr>
+            <tr>
+                <td class="table-label-greyupper">Sex</td>
+                <td><select name="patientdetails">
+                    <option value="" selected disabled hidden>select</option>
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                </select></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="itembox fullwidth">
+    <div class="heading-item">Stroke Call Details</div>
+    <table class="table-form">
+        <tbody>
+            <tr>
+                <td class="table-label-greyupper">Activation Datetime</td>
+                <td><input type="date", class="inputdate", name="strokecall"/><input type="time", class="inputdate", name="strokecall"/></td>
+            </tr>
+            <tr>
+                <td class="table-label-greyupper">LKW Datetime</td>
+                <td><input type="date", class="inputdate", name="strokecall"/><input type="time", class="inputdate", name="strokecall"/></td>
+            </tr>
+            <tr>
+                <td class="table-label-greyupper">Triage Category</td>
+                <td><select name="strokecall">
+                    <option value="" selected disabled hidden>select</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="N/A">NA</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td class="table-label-greyupper">Referral Source</td>
+                <td><select name="strokecall">
+                    <option value="" selected disabled hidden>select</option>
+                    <option value="MSU">MSU</option>
+                    <option value="ED">ED</option>
+                    <option value="inpatient">Inpatient</option>
+                    <option value="direct_admission">Direct admission</option>
+                    <option value="Direct Admission">NA</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td class="table-label-greyupper">Premorbid mRS</td>
+                <td><select name="strokecall">
+                    <option value="" selected disabled hidden>select</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td class="table-label-greyupper">Baseline NIHSS</td>
+                <td><input type="number", class="textbox", name="strokecall", placeholder="NIHSS"></td>
+            </tr>
+                <td class="table-label-greyupper">CT Datetime</td>
+                <td><input type="date", class="inputdate", name="strokecall"/><input type="time", class="inputdate", name="strokecall"/></td>
+            </tr>
+            </tr>
+                <td class="table-label-greyupper">Neurologist</td>
+                <td><select name="strokecall">
+                    <option value="" selected disabled hidden>select</option>
+                    <option value="N/A">None</option>
+                    <option value="Choi">Choi</option>
+                    <option value="Ng">Ng</option>
+                    <option value="Thijs">Thijs</option>
+                    <option value="Carney">Carney</option>
+                    <option value="Perucca">Perucca</option>
+                    <option value="Macdonell">Macdonell</option>
+                    <option value="Archer">Archer</option>
+                    <option value="Simpson">Simpson</option>
+                </select></td>
+            </tr>
+            </tr>
+                <td class="table-label-greyupper">Reg</td>
+                <td><select name="strokecall">
+                    <option value="" selected disabled hidden>select</option>
+                    <option value="N/A">None</option>
+                    <option value="Thevathasan">Thevathasan</option>
+                    <option value="Pandey">Pandey</option>
+                    <option value="Wang">Wang</option>
+                    <option value="BPT">BPT</option>
+                </select></td>
+            </tr>
+            </tr>
+                <td class="table-label-greyupper">NP</td>
+                <td><select name="strokecall">
+                    <option value="" selected disabled hidden>select</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td class="table-label-greyupper">Core Volume estimate</td>
+                <td><input type="number", step="0.01" class="textbox", name="strokecall", placeholder="RAPID CBF <30%"></td>
+            </tr> 
+            <tr>
+                <td class="table-label-greyupper">Perfusion Deficit estimate</td>
+                <td><input type="number", step="0.01" class="textbox", name="strokecall", placeholder="Tmax >6.0sec"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="itembox fullwidth">
+    <div class="heading-item">Neurointervention Details</div>
+    <table class="table-form">
+        <tbody>
+            <tr>
+                <td class="table-label-greyupper">Lysis</td>
+                <td><select name="neurointervention">
+                    <option value="" selected disabled hidden>select</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td class="table-label-greyupper">Thrombolysis Datetime</td>
+                <td><input type="date", class="inputdate", name="neurointervention"/><input type="time", class="inputdate", name="neurointervention"/></td>
+            </tr>
+            <tr>
+                <td class="table-label-greyupper">Thombolysis agent</td>
+                <td><select name="neurointervention">
+                    <option value="" selected disabled hidden>select</option>
+                    <option value="TNK">TNK</option>
+                    <option value="tPA">tPA</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td class="table-label-greyupper">DSA</td>
+                <td><select name="neurointervention">
+                    <option value="" selected disabled hidden>select</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td class="table-label-greyupper">Groin Puncture Datetime</td>
+                <td><input type="date", class="inputdate", name="neurointervention"/><input type="time", class="inputdate", name="neurointervention"/></td>
+            </tr>
+            <tr>
+                <td class="table-label-greyupper">ECR</td>
+                <td><select name="neurointervention">
+                    <option value="" selected disabled hidden>select</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td class="table-label-greyupper">Stent</td>
+                <td><select name="neurointervention">
+                    <option value="" selected disabled hidden>select</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td class="table-label-greyupper">Reperfusion Datetime</td>
+                <td><input type="date", class="inputdate", name="neurointervention"/><input type="time", class="inputdate", name="neurointervention"/></td>
+            </tr>
+            <tr>
+                <td class="table-label-greyupper">LVO</td>
+                <td><select name="neurointervention">
+                    <option value="" selected disabled hidden>select</option>
+                    <option value="R">Right</option>
+                    <option value="L">Left</option>
+                    <option value="M">Midline</option>
+                </select>
+                <select name="neurointervention">
+                    <option value="" selected disabled hidden>select</option>
+                    <option value="ICA">ICA</option>
+                    <option value="A1">A1</option>
+                    <option value="A2">A2</option>
+                    <option value="M1">M1</option>
+                    <option value="M2">M2</option>
+                    <option value="M3">M3</option>
+                    <option value="P1">P1</option>
+                    <option value="BA">BA</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td class="table-label-greyupper">Tandem</td>
+                <td><select name="neurointervention">
+                    <option value="" selected disabled hidden>select</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td class="table-label-greyupper">LVO</td>
+                <td><select name="neurointervention">
+                    <option value="" selected disabled hidden>select</option>
+                    <option value="R">Right</option>
+                    <option value="L">Left</option>
+                    <option value="M">Midline</option>
+                </select>
+                <select name="neurointervention">
+                    <option value="" selected disabled hidden>select</option>
+                    <option value="ICA">ICA</option>
+                    <option value="A1">A1</option>
+                    <option value="A2">A2</option>
+                    <option value="M1">M1</option>
+                    <option value="M2">M2</option>
+                    <option value="M3">M3</option>
+                    <option value="P1">P1</option>
+                    <option value="BA">BA</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td class="table-label-greyupper">Angio report on file</td>
+                <td><select name="neurointervention">
+                    <option value="" selected disabled hidden>select</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td class="table-label-greyupper">Geneal anaesthetic</td>
+                <td><select name="neurointervention">
+                    <option value="" selected disabled hidden>select</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td class="table-label-greyupper">IV antiplatelet</td>
+                <td><select name="neurointervention">
+                    <option value="" selected disabled hidden>select</option>
+                    <option value="0">Tirofiban</option>
+                    <option value="1">Ticagrelor</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td class="table-label-greyupper">Neurointerventionist(s)</td>
+                <td><select name="neurointervention">
+                    <option value="" selected disabled hidden>select</option>
+                    <option value="Brooks">Brooks</option>
+                    <option value="Maingard">Maingard</option>
+                    <option value="Pavlin-Premrl">Pavlin-Premrl</option>
+                </select></td> 
+            </tr>
+            <tr>
+                <td class="table-label-greyupper">Final TICI</td>
+                <td><select name="neurointervention">
+                    <option value="" selected disabled hidden>select</option>
+                    <option value="1">1</option>
+                    <option value="2A">2A</option>
+                    <option value="2B">2B</option>
+                    <option value="2C">2C</option>
+                    <option value="3">3</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td class="table-label-greyupper">Decompressive craniectomy</td>
+                <td><select name="neurointervention">
+                    <option value="" selected disabled hidden>select</option>
+                    <option value="0">Not considered</option>
+                    <option value="1">Craniectomy considered</option>
+                    <option value="2">Craniectomy performed</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td class="table-label-greyupper">DSA complication</td>
+                <td>Intracranial, cervical artery or aortic arch injury - dissection, aneurysm or perforation<br>
+                    <select name="neurointervention">
+                        <option value="" selected disabled hidden>select</option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select><br><br>
+                    Femoral artery haematoma, Injury, or other complication including limb ischaemia<br>
+                    <select name="neurointervention">
+                        <option value="" selected disabled hidden>select</option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select><br><br>
+                    Embolisation to other territory - intracranial<br>
+                    <select name="neurointervention">
+                        <option value="" selected disabled hidden>select</option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="table-label-greyupper">NIHSS 12-24hr</td>
+                <td><input type="number", class="textbox", name="strokecall", placeholder="-1 if not doc"></td>
+            </tr>
+            <tr>
+                <td class="table-label-greyupper">NIHSS DC</td>
+                <td><input type="number", class="textbox", name="strokecall", placeholder="-1 if not doc"></td>
+            </tr>
+            <tr>
+                <td class="table-label-greyupper">Intraparenchymal haemorrhage</td>
+                <td><select name="neurointervention">
+                    <option value="" selected disabled hidden>select</option>
+                    <option value="None">No bleeding complication</option>
+                    <option value="HI1">HI1</option>
+                    <option value="HI2">HI2</option>
+                    <option value="PH1">PH1</option>
+                    <option value="PH2">PH2</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td class="table-label-greyupper">SAH</td>
+                <td><select name="neurointervention">
+                    <option value="" selected disabled hidden>select</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td class="table-label-greyupper">Remote haemorrhage</td>
+                <td><select name="neurointervention">
+                    <option value="" selected disabled hidden>select</option>
+                    <option value="PHR1">PHr1</option>
+                    <option value="PHR2">PHr2</option>
+                </select></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="itembox fullwidth">
+    <div class="heading-item">Stroke Outcomes</div>
+    <table class="table-form">
+        <tbody>
+            <tr>
+                <td class="table-label-greyupper">UCR</td>
+                <td><select name="strokeoutcomes">
+                    <option value="" selected disabled hidden>select</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td class="table-label-greyupper">MET</td>
+                <td><select name="strokeoutcomes">
+                    <option value="" selected disabled hidden>select</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td class="table-label-greyupper">Code blue</td>
+                <td><select name="strokeoutcomes">
+                    <option value="" selected disabled hidden>select</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td class="table-label-greyupper">Discharge destination</td>
+                <td><select name="strokeoutcomes">
+                    <option value="" selected disabled hidden>select</option>
+                    <option value="Home">Home</option>
+                    <option value="RACF">RACF</option>
+                    <option value="PCU">Pall Care Unit</option>
+                    <option value="W12">Ward 12</option>
+                    <option value="W11">Ward 11</option>
+                    <option value="TIPR">Talbot</option>
+                    <option value="DIPR">Donvale</option>
+                    <option value="NERC">NERC</option>
+                    <option value="Transfer">Transfer to acute</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td class="table-label-greyupper">Discharge mRS</td>
+                <td><select name="strokeoutcomes">
+                    <option value="" selected disabled hidden>select</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>s</option>
+                    <option value="2">2</option>Yes</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td class="table-label-greyupper">Discharge function</td>
+                <td><select name="strokeoutcomes">
+                    <option value="" selected disabled hidden>select</option>
+                    <option value="independent">ambulant ind</option>
+                    <option value="assist">ambulant assist</option>s</option>
+                    <option value="stand">stand TF</option>Yes</option>
+                    <option value="hoist">hoist TF</option>
+                    <option value="bedbound">bedbound</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td class="table-label-greyupper">Discharge datetime</td>
+                <td><input type="date", class="inputdate", name="strokeoutcomes"/><input type="time", class="inputdate", name="strokeoutcomes"/></td>
+            </tr>
+            <tr>
+                <td class="table-label-greyupper">Readmission within 14 days</td>
+                <td><select name="strokeoutcomes">
+                    <option value="" selected disabled hidden>select</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>s</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td class="table-label-greyupper">3 months mRS</td>
+                <td><select name="strokeoutcomes">
+                    <option value="" selected disabled hidden>select</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>s</option>
+                    <option value="2">2</option>Yes</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td class="table-label-greyupper">3 months NIHSS</td>
+                <td><input type="number", class="textbox", name="strokecall", placeholder="NIHSS"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}  dslkDJ

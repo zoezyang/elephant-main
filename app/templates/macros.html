@@ -1,0 +1,17 @@
+{% macro build_site_navigation(items, selected) %}
+<div class="sidenav">
+    <ul style="list-style: none; margin:0; padding:0">
+        <img src="{{ url_for('static', filename='AUSTIN.jpeg') }}" class="sidenav_img">
+        {% for item in items %}
+            {% if item.type == "heading" %}
+                <li class="sidenav_heading">{{ item.contents | safe }}</li>
+            {% elif item.type == "link" %}
+                <a href="{{ item.url }}" style="text-decoration: none;">
+                    <li {% if selected == item.name %}class="sidenav_active"{% else %}class="sidenav_inactive"{% endif %}>{{ item.contents | safe }}</li>
+                </a>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    <div style="bottom:0; position:absolute; margin-bottom: 30px; text-align:center; width: 100%; font-size: 14px; color: #444">Austin Stroke Database</div>
+</div>
+{% endmacro %}
