@@ -46,7 +46,7 @@ def demographics():
     selected = 'Demographics'
     return render_template('demographics.html', title = 'Demographics', items = items, selected = selected)
 
-@app.route('/addstroke')
+@app.route('/addstroke', methods = ['GET', 'POST'])
 def addstroke():
     items = generate_sidenav_list()
     selected = 'Add Stroke'
